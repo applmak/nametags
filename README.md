@@ -1,6 +1,7 @@
 # Nametag generator
 
 A few tools for making nametags for a conference.
+Note: This is not an officially supported Google product.
 
 ## Usage
 
