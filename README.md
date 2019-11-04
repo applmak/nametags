@@ -7,13 +7,13 @@ Note: This is not an officially supported Google product.
 
 1. First design a nametag in HTML.
 1. Next, set up a form to gather data about the people who need nametags.
-1. In the form's sheet, make a new sheet that munges the data so that it's appropriate for display. You can use [this](https://docs.google.com/spreadsheets/d/1yuIhNrsTYLdnP1MiGv-Pq8GSoEf9vbLCrHPdQ0d2t38/edit?usp=sharing)) as a reference.
+1. In the form's sheet, make a new sheet that munges the data so that it's appropriate for display.
 1. Save the sheet as a tab-delimited file `.tsv`.
 1. Modify nametags.py so that it extracts the right data from the `tsv` and substitutes correctly.
 1. Change the nametag to have python-style `%s` named delimiters for sections you want to replace.
 1. Run python nametags.py nametags.tpl mycooldata.tsv. You'll end up with an .html file per row of the tsv. Note that HTML is awesome for this purpose, but it's not so good at sizing text to fit a box. No problem, this script can help you out:
 
- ```javascript
+    ```javascript
 window.addEventListener('load', () => {
   for (let e of document.querySelectorAll('.one-line')) {
     // Read the initial font size:
@@ -29,7 +29,7 @@ window.addEventListener('load', () => {
   }
 });
 ```
-Just sprinkle that the `one-line` class wherever you want some text to take up a single line, and the script will find the largest font size that makes it fit.
+    Just sprinkle that the `one-line` class wherever you want some text to take up a single line, and the script will find the largest font size that makes it fit.
 
 1. Now, run `npm install`, because of course.
 1. Generate pdfs from these html files via headless Chrome: `node print.js *.html`
